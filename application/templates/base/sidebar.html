@@ -1,0 +1,51 @@
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            {% if not userbasic.is_organization %}
+      <li class="nav-item">
+                <a class="nav-link" href="/@{{ request.user.get_username }}/profile_details/{{ request.user.id }}"><i class="icon-speedometer"></i> My Profile </a>
+                <a class="nav-link" href="/@{{ request.user.get_username }}/update_profile/"><i class="icon-speedometer"></i> Update Profile</a>
+            </li>
+    {% else %}
+      <li class="nav-item">
+                <a class="nav-link" href="/"><i class="icon-speedometer"></i> My Profile </a>
+                <a class="nav-link" href="/@{{ request.user.get_username }}/update_org_profile/"><i class="icon-speedometer"></i> Update Profile</a>
+            </li>
+    {% endif %}
+
+            <li class="nav-title">
+                Events
+            </li>
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link" href="#"><i class="icon-star"></i> Ongoing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="widgets.html"><i class="icon-calculator"></i> Upcoming <span
+                        class="badge badge-info">NEW</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html"><i class="icon-pie-chart"></i> Completed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html"><i class="icon-pie-chart"></i> Wishlist</a>
+            </li>
+                        <li class="nav-title">
+                Job Profile
+            </li>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link" href="#"><i class="icon-puzzle"></i> Applied</a>
+                </li>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link" href="#"><i class="icon-star"></i> Wishlist</a>
+            </li>
+            <li class="divider"></li>
+            <li class="nav-title">
+                Extras
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/@{{ request.user.get_username }}/delete_profile/"><i class="icon-pie-chart"></i> Deactivate Account</a>
+            </li>
+        </ul>
+    </nav>
+</div>

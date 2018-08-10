@@ -1,0 +1,6 @@
+.coverage
+.tox/
+*.pyc
+build/
+venv/
+.vscode/
