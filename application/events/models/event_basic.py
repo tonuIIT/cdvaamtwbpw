@@ -46,7 +46,7 @@ class EventBasic(models.Model):
     start_date = models.DateField(auto_now_add=False, null=True)
     end_date = models.DateField(null=True, blank=True)
     registration_deadline = models.DateField(null=True, blank=True)
-    description = models.TextField(blank=True)
+    description = models.CharField(max_length=100, default='', null=True)
     banner = models.ImageField(storage=fs, null=True)
     audience_type = JSONField(default={})
     max_audience = models.IntegerField(default=0)
